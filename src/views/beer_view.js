@@ -12,7 +12,7 @@ BeerView.prototype.bindEvents = function(){
   });
 };
 
-CountryView.prototype.render = function(beer){
+BeerView.prototype.render = function(beer){
   this.container.innerHTML = "";
   const header = this.createHeader(beer);
   this.container.appendChild(header);
@@ -22,7 +22,7 @@ CountryView.prototype.render = function(beer){
 
 }
 
-CountryView.prototype.createHeader = function(beer){
+BeerView.prototype.createHeader = function(beer){
   const header = document.createElement('header');
   const h1 = document.createElement('h1');
   h1.textContent = beer.name;
@@ -34,10 +34,10 @@ CountryView.prototype.createHeader = function(beer){
 BeerView.prototype.createDetails = function(beer){
   const detailDiv = document.createElement('section');
   const description = document.createElement('p');
-  description.textContent = "description: " + beer.description;
+  description.textContent = "Description: " + beer.description;
   detailDiv.appendChild(description);
 
-  });
+  };
 
 
 
