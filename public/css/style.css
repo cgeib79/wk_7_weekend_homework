@@ -13,3 +13,53 @@ h1{
   padding-top: 70px;
   font-size: 4em;
 }
+
+select{
+  font-size: 1rem;
+}
+
+.button {
+    background-color: orange;
+    border: none;
+    color: white;
+    padding: 10px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+input {
+  margin: 0.2em 1.5em 0.2em 0.4em;
+}
+
+input[type=number], input[type=text] {
+  border-radius: 3px;
+  padding: 5px;
+  border-style: none;
+}
+
+input[type=number] {
+  width: 40px;
+}
+
+input[type=submit] {
+  display: block;
+  border-radius: 5px;
+  background-color: orange;
+  padding: 4px 10px 6px;
+  margin: 1em 0;
+}
+
+.delete-btn {
+  width: 30px;
+  height: 30px;
+  background: url(../images/delete.png);
+  background-size: 30px;
+}
+
+button.delete-btn {
+    border: none;
+    padding: 0;
+    border-radius: 5px;
+}

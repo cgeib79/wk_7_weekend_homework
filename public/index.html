@@ -9,16 +9,18 @@
   </head>
   <body>
     <h1>Brewdog Beers</h1>
-    <label for="beers">Select a beer:</label>
-    <select id="beers">
-      <option selected disabled></option>
-    </select>
-    <div id="beer">
-      <div id="beer-type">
 
-      </div>
-      <div id="beer-container">
-      </div>
-    </div>
+<form id="beer-display-view">
+  <label for="beer-input">BeerName</label>
+  <input id="beer-input" type="text" name="beer">
+  <input type="submit" name="submit" value="Submit">
+</form>
+
+<button type="button" id="random-button" class="button">Random Button</button>
+
+<label for="beer-select">View beer by ABV</label>
+<select id="beer-select"> <option selected disabled></option>
+</select>
+<div id="beer-container"></div>
   </body>
 </html>

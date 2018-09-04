@@ -6,39 +6,33 @@ const BeerView = function(container){
 }
 
 BeerView.prototype.bindEvents = function(){
-  PubSub.subscribe("BeerList:beer-ready", (event) => {
-    const beer = event.detail;
+  PubSub.subscribe("Beers:beer-data-loaded", (event) => {
+    const beers = event.detail;
     this.render(beer);
   });
 };
 
-BeerView.prototype.render = function(beer){
-  this.container.innerHTML = "";
-  const header = this.createHeader(beer);
-  this.container.appendChild(header);
 
-  const details = this.createDetails(beer);
-  this.container.appendChild(details);
+if (beers.length === 0) {
+  const noBeer = this.createElement('h4', wrongInput )
+  this.container.appendChild(noBeer)
+    } else {
+  beers.forEach((brewdog) => {
+const beerName = this.createElement('h1', beer.name);
+this.container.appendChild(beerName);
 
+const beerDescription = this.createElement('p', beer.description)
+this.container.appendChild(beerDescription);
+
+const beerAbv = this.createElement('p', `ABV:${beer.abv}%`)
+this.container.appendChild(beerAbv);
+  })
 }
 
-BeerView.prototype.createHeader = function(beer){
-  const header = document.createElement('header');
-  const h1 = document.createElement('h1');
-  h1.textContent = beer.name;
-  h1.classList.add("header");
-  header.appendChild(h1);
-  return header;
+BeerView.prototype.createElement = function (element, text){
+  const element = document.createElement(element);
+  element.textContent = text;
+  return element;
 };
-
-BeerView.prototype.createDetails = function(beer){
-  const detailDiv = document.createElement('section');
-  const description = document.createElement('p');
-  description.textContent = "Description: " + beer.description;
-  detailDiv.appendChild(description);
-
-  };
-
-
 
 module.exports = BeerView;
